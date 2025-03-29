@@ -14,12 +14,13 @@ df['Category_Encoded'] = df['Category'].astype('category').cat.codes
 
 print(df)
 ```
-markdown
-Category	Category_Encoded
-Red	2
-Blue	0
-Green	1
-Blue	0
-Red	2
+| Category | Category_Encoded |
+|----------|-----------------|
+| Red      | 2               |
+| Blue     | 0               |
+| Green    | 1               |
+| Blue     | 0               |
+| Red      | 2               |
+```
 
 
