@@ -87,10 +87,10 @@ The dummy variable trap happens when one column is redundant because it can be d
 If Color_Blue, Color_Green, and Color_Red exist, we only need two of them:
 If Color_Blue = 0 and Color_Green = 0, then the color must be Red.
 One column is unnecessary.
+
 ```python
 encoder = OneHotEncoder(sparse=False, drop='first')
 encoded_array = encoder.fit_transform(df)
-
 df_encoded = pd.DataFrame(encoded_array, columns=encoder.get_feature_names_out(['Color', 'Size']))
 print(df_encoded)
 ```
