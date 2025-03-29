@@ -84,9 +84,9 @@ print(df_encoded)
 #### Avoiding Dummy Variable Trap (Drop First Column)
 The dummy variable trap happens when one column is redundant because it can be derived from others.
 `example`
-If Color_Blue, Color_Green, and Color_Red exist, we only need two of them:
+`If Color_Blue, Color_Green, and Color_Red exist, we only need two of them:
 If Color_Blue = 0 and Color_Green = 0, then the color must be Red.
-One column is unnecessary.
+One column is unnecessary.`
 
 ```python
 encoder = OneHotEncoder(sparse=False, drop='first')
