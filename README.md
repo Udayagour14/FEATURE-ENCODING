@@ -13,7 +13,7 @@ df = pd.DataFrame({'Category': ['Red', 'Blue', 'Green', 'Blue', 'Red']})
 df['Category_Encoded'] = df['Category'].astype('category').cat.codes
 
 print(df)
-```
+
 | Category | Category_Encoded |
 |----------|-----------------|
 | Red      | 2               |
@@ -21,6 +21,5 @@ print(df)
 | Green    | 1               |
 | Blue     | 0               |
 | Red      | 2               |
-```
 
 
