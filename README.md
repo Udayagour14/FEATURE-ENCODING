@@ -76,7 +76,7 @@ print(df_encoded)
 | Color_Blue | Color_Green | Color_Red |
 |------------|------------|-----------|
 | 0.0        | 0.0        | 1.0       |
-| 1.0        | 0.0        | 0.0       |
+| 1.0        | 0.0         | 0.0       |
 | 0.0        | 1.0        | 0.0       |
 | 1.0        | 0.0        | 0.0       |
 | 0.0        | 0.0        | 1.0       |
@@ -93,6 +93,38 @@ encoder = OneHotEncoder(sparse=False, drop='first')
 encoded_array = encoder.fit_transform(df)
 df_encoded = pd.DataFrame(encoded_array, columns=encoder.get_feature_names_out(['Color', 'Size']))
 print(df_encoded)
+```
+
+### 3️⃣ Ordinal Encoding
+```
+Used when categories have a natural order (e.g., “Low < Medium < High”).
+from sklearn.preprocessing import OrdinalEncoder
+
+# Sample data
+df2 = pd.DataFrame({'Size': ['Small', 'Medium', 'Large', 'Small']})
+
+# Define order
+order = [['Small', 'Medium', 'Large']]
+
+# Apply Ordinal Encoding
+oe = OrdinalEncoder(categories=order)
+df2['Size_Encoded'] = oe.fit_transform(df2[['Size']])
+print(df2)
+```
+```
+we got here
+    Size  Size_Encoded
+0  Small           0.0
+1  Medium          1.0
+2   Large          2.0
+3  Small           0.0
+```
+```
+| Encoding Type        | Use Case                   | Output Example                   |
+| -------------------- | -------------------------- | -------------------------------- |
+| **Label Encoding**   | Convert category to number | Red → 2, Blue → 0                |
+| **One-Hot Encoding** | Creates binary columns     | Red → (0,0,1)                    |
+| **Ordinal Encoding** | For ordered categories     | Small → 0, Medium → 1, Large → 2 |
 ```
 
 
